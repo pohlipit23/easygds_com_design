@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout title="easyGDS | GLACIAL COMMERCE">
+  <link rel="stylesheet" href="/src/styles/glacial.css" />
+  <Navigation theme="light" />
+  
+  <div class="v4-scope v4-wrapper">
+    
+    <!-- HERO -->
+    <section class="v4-hero">
+      <div class="v4-hero-content">
+        <div class="v4-hero-text">
+          <p style="font-family: var(--font-data); letter-spacing: 0.1em; margin-bottom: 2rem;">ECOSYSTEM_DEPTH: 01</p>
+          <h1>
+            Travel Commerce.<br>
+            Simplified.
+          </h1>
+          <p style="margin-bottom: 3rem;">
+            A complete ecosystem for airlines, travel agents, and loyalty brands to build products and manage distribution without cost or complexity.
+          </p>
+          
+          <a href="#solutions" class="v4-btn-crystal">Explore Solutions</a>
+        </div>
+        
+        <div class="v4-ice-block" style="filter: drop-shadow(0 30px 60px rgba(6, 182, 212, 0.25)) drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15)); height: auto; max-height: 500px;">
+          <div class="v4-ice-layer v4-layer-1"></div>
+          <div class="v4-ice-layer v4-layer-2"></div>
+          <div class="v4-ice-layer v4-layer-3" style="position: relative; overflow: hidden; height: auto; width: 100%;">
+            <div class="v4-screenshot-carousel">
+              <img src="/images/b2c_homepage.png" class="v4-carousel-slide active" style="width: 100%; height: auto; display: block; opacity: 0.95; border-radius: 8px;" />
+              <img src="/images/search_results.png" class="v4-carousel-slide" style="width: 100%; height: auto; display: block; opacity: 0.95; border-radius: 8px;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .v4-screenshot-carousel {
+        position: relative;
+        width: 100%;
+      }
+      
+      .v4-carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      
+      .v4-carousel-slide:first-child {
+        position: relative;
+      }
+      
+      .v4-carousel-slide.active {
+        opacity: 0.95 !important;
+      }
+      
+      .v4-carousel-slide:not(.active) {
+        opacity: 0 !important;
+      }
+    </style>
+
+    <script>
+      function initV4Carousel() {
+        const slides = document.querySelectorAll('.v4-carousel-slide');
+        if (slides.length === 0) return;
+        
+        let currentIndex = 0;
+        
+        setInterval(() => {
+          slides[currentIndex].classList.remove('active');
+          currentIndex = (currentIndex + 1) % slides.length;
+          slides[currentIndex].classList.add('active');
+        }, 4000);
+      }
+      
+      document.addEventListener('DOMContentLoaded', initV4Carousel);
+    </script>
+
+    <!-- SEGMENT SELECTOR -->
+    <section class="v4-section" id="solutions">
+      <div class="v4-grid">
+        <!-- Airlines -->
+        <div class="v4-card">
+          <div class="v4-icon-frost">✈️</div>
+          <h3>Airlines</h3>
+          <p>Power your airline holiday brand and own your direct customer relationship.</p>
+        </div>
+        
+        <!-- Agents -->
+        <div class="v4-card">
+          <div class="v4-icon-frost">🌍</div>
+          <h3>Travel Agents</h3>
+          <p>Access vast global inventory with transparent costs. Pay only for what you use.</p>
+        </div>
+        
+        <!-- Retail -->
+        <div class="v4-card">
+          <div class="v4-icon-frost">🛍️</div>
+          <h3>Loyalty & Retail</h3>
+          <p>Launch your travel vertical without complexity. Maintain 1st party customer ownership.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE ENGINE PREVIEW -->
+    <section class="v4-section">
+      <div class="v4-hero-content" style="align-items: center; min-height: auto;">
+          <div>
+             <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The "Engine" Preview</h2>
+             <p style="margin-bottom: 1rem;">Every part of airline commerce in one branded ecosystem: Flights, hotels, tours, ancillaries, and loyalty.</p>
+             <p style="font-weight: 700; color: #0f172a;">Integrate your existing content or use Tripovo’s global inventory for ultimate choice.</p>
+          </div>
+          <!-- Re-using ice block style for visual container if possible, or just image -->
+          <div style="position: relative;">
+            <img src="/engine_architecture_visual.png" alt="EasyGDS Engine Architecture" style="width: 100%; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);" />
+          </div>
+      </div>
+    </section>
+
+    <!-- PROOF & SCALE -->
+    <div class="v4-stats-bar" style="margin-top: 4rem; padding: 4rem 0; height: auto;">
+      
+      <!-- Scrolling Logos -->
+      <div style="display: flex; justify-content: space-around; margin-bottom: 3rem; flex-wrap: wrap; gap: 2rem;">
+         <div style="font-weight: bold; color: #8899ac;">ETIHAD AIRWAYS</div>
+         <div style="font-weight: bold; color: #8899ac;">MALAYSIA AIRLINES</div>
+         <div style="font-weight: bold; color: #8899ac;">AMADEUS</div>
+         <div style="font-weight: bold; color: #8899ac;">NATAS</div>
+      </div>
+
+      <div class="v4-hero-content" style="grid-template-columns: repeat(4, 1fr); text-align: center; gap: 2rem;">
+        <div>
+          <div class="v4-stat-val">1M+</div>
+          <div class="v4-stat-label">HOTELS</div>
+        </div>
+        <div>
+          <div class="v4-stat-val">950+</div>
+          <div class="v4-stat-label">CARRIERS</div>
+        </div>
+        <div>
+          <div class="v4-stat-val">250K+</div>
+          <div class="v4-stat-label">ACTIVITIES</div>
+        </div>
+        <div>
+          <div class="v4-stat-val">650+</div>
+          <div class="v4-stat-label">CAR RENTAL</div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</Layout>

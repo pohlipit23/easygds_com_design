@@ -1,0 +1,116 @@
+---
+interface Props {
+  src: string;
+  alt?: string;
+}
+
+const { src, alt = "Screen Content" } = Astro.props;
+---
+
+<div class="imac-container">
+  <div class="imac-body">
+    <div class="imac-bezel">
+      <!-- Camera Dot -->
+      <div class="imac-camera"></div>
+      
+      <!-- Screen Area -->
+      <div class="imac-screen">
+         <img src={src} alt={alt} class="imac-content" />
+      </div>
+      
+      <!-- Chin -->
+      <div class="imac-chin">
+        <!-- Optional Apple logo or similar could go here, keeping it minimal -->
+      </div>
+    </div>
+  </div>
+  <div class="imac-stand"></div>
+</div>
+
+<style>
+  .imac-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1000px;
+  }
+
+  .imac-body {
+    background: #e2e2e2;
+    border-radius: 20px;
+    padding: 12px 12px 0 12px;
+    box-shadow: 
+      0 0 0 1px rgba(0,0,0,0.1),
+      inset 0 0 0 1px rgba(255,255,255,0.5),
+      0 20px 40px rgba(0,0,0,0.2);
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .imac-bezel {
+    background: #1a1a1a;
+    border-radius: 12px 12px 0 0;
+    padding: 2.5% 2.5% 0 2.5%; /* Responsive padding for bezel thickness */
+    position: relative;
+  }
+
+  .imac-camera {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #333;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #000;
+    z-index: 10;
+  }
+
+  .imac-screen {
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9; /* Enforce desktop ratio */
+    border-radius: 2px 2px 0 0;
+  }
+
+  .imac-content {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .imac-container {
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+  }
+
+  .imac-chin {
+    background: #e2e2e2;
+    height: 24px;
+    margin-top: -1px; /* Seal the gap */
+    border-radius: 0 0 12px 12px;
+    position: relative;
+    z-index: 3;
+    background: linear-gradient(to bottom, #dedede, #cfcfcf);
+    border-top: 1px solid #c0c0c0;
+  }
+
+  .imac-stand {
+    width: 140px;
+    height: 60px;
+    background: linear-gradient(to bottom, #ccc, #bbb);
+    margin-top: -10px;
+    z-index: 1;
+    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0% 100%);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+</style>

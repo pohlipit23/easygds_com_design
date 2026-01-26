@@ -1,0 +1,318 @@
+/* 
+  THEME: GLACIAL OPTICAL STRATIGRAPHY
+  CONCEPT: Ancient ice under pressure. Thick glass, caustic light, layered compression.
+  A radically cool, white-on-white aesthetic.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    /* -- GLACIAL PALETTE -- */
+    --ice-core: #F0FDFF;
+    /* Deepest layer */
+    --ice-surface: rgba(255, 255, 255, 0.4);
+    /* Mid layer */
+    --ice-crust: rgba(255, 255, 255, 0.7);
+    /* Top layer */
+
+    --caustic-blue: #06B6D4;
+    /* Cyan accent (trapped light) */
+    --caustic-deep: #0E7490;
+    /* Darker cyan for text */
+
+    /* -- PHYSICS -- */
+    --frost-blur: blur(24px);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.6);
+    --glass-edge: 1px solid rgba(255, 255, 255, 0.9);
+    /* Brighter edge */
+
+    /* -- DEPTH -- */
+    /* Light passing through ice - diffuse glow, no sharp shadows */
+    --caustic-glow: 0 0 40px -10px rgba(6, 182, 212, 0.3);
+    --shadow-freeze: 0 20px 40px -10px rgba(10, 50, 60, 0.05);
+
+    /* -- TYPOGRAPHY -- */
+    --font-ice: 'Outfit', sans-serif;
+    --font-data: 'JetBrains Mono', monospace;
+
+    --ease-freeze: cubic-bezier(0.2, 0.8, 0.2, 1);
+    /* Slow freeze, quick snap */
+}
+
+/* --- GLOBAL RESET --- */
+.v4-scope {
+    background-color: #E8F7FA;
+    /* Pale glacial water */
+    color: #334155;
+    font-family: var(--font-ice);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background CAUSTICS (Light trapped in ice) */
+.v4-scope::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.8) 0%, transparent 20%),
+        radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 30%),
+        conic-gradient(from 0deg at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+    filter: blur(80px);
+    /* Massive diffusion */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.v4-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.v4-scope h1,
+.v4-scope h2,
+.v4-scope h3 {
+    color: #164E63;
+    /* Deep frozen blue */
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+/* --- FROSTED COMPONENTS --- */
+.v4-glass-panel {
+    background: var(--ice-surface);
+    backdrop-filter: var(--frost-blur);
+    -webkit-backdrop-filter: var(--frost-blur);
+    border: var(--glass-border);
+    border-top: var(--glass-edge);
+    box-shadow: var(--shadow-freeze);
+    border-radius: 32px;
+    /* Smooth ice melt */
+}
+
+/* --- HERO SECTION --- */
+.v4-hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 150px 5vw 0 5vw;
+}
+
+.v4-hero-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.v4-hero-text h1 {
+    font-size: clamp(4rem, 8vw, 7rem);
+    text-transform: uppercase;
+    color: transparent;
+    background: linear-gradient(180deg, #155E75, #67E8F9);
+    /* Ice depth gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 4px 0 rgba(255, 255, 255, 0.5));
+}
+
+.v4-hero p {
+    font-size: 1.25rem;
+    color: #155E75;
+    max-width: 30ch;
+    font-weight: 400;
+}
+
+/* --- CRYSTAL BUTTON --- */
+.v4-btn-crystal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 4rem;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid #FFF;
+    border-radius: 100px;
+    color: var(--caustic-deep);
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    box-shadow:
+        0 10px 30px -10px rgba(6, 182, 212, 0.4),
+        inset 0 0 20px rgba(255, 255, 255, 0.8);
+    transition: all 0.4s var(--ease-freeze);
+    position: relative;
+    overflow: hidden;
+}
+
+.v4-btn-crystal:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 50px rgba(6, 182, 212, 0.6);
+}
+
+.v4-btn-crystal::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    width: 20px;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.8);
+    transform: rotate(25deg);
+    left: -50px;
+    transition: 0.6s;
+}
+
+.v4-btn-crystal:hover::after {
+    left: 120%;
+}
+
+/* --- HERO VISUAL: FROZEN BLOCK --- */
+.v4-ice-block {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    perspective: 2000px;
+}
+
+.v4-ice-layer {
+    position: absolute;
+    inset: 0;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 1s var(--ease-freeze);
+    overflow: hidden;
+}
+
+.v4-layer-1 {
+    /* Deepest */
+    background: #FFF;
+    transform: translateZ(0px) rotateY(-10deg);
+    opacity: 0.6;
+    z-index: 1;
+    filter: blur(2px);
+}
+
+.v4-layer-2 {
+    /* Middle */
+    background: rgba(6, 182, 212, 0.05);
+    transform: translateZ(50px) rotateY(-10deg);
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    box-shadow: var(--caustic-glow);
+}
+
+.v4-layer-3 {
+    /* Top */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+    transform: translateZ(100px) rotateY(-10deg) translateX(-20px);
+    backdrop-filter: blur(12px);
+    z-index: 3;
+    border: 1px solid rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.v4-ice-block:hover .v4-layer-2 {
+    transform: translateZ(80px) rotateY(0deg);
+}
+
+.v4-ice-block:hover .v4-layer-3 {
+    transform: translateZ(150px) rotateY(0deg) translateX(0);
+}
+
+/* --- SECTIONS: STRATIGRAPHY --- */
+.v4-section {
+    position: relative;
+    padding: 10rem 5vw;
+}
+
+.v4-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.v4-card {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    transition: 0.4s;
+    position: relative;
+    top: 0;
+}
+
+.v4-card:hover {
+    background: rgba(255, 255, 255, 0.6);
+    top: -20px;
+    box-shadow: 0 30px 60px -10px rgba(6, 182, 212, 0.15);
+}
+
+.v4-icon-frost {
+    font-size: 3rem;
+    color: var(--caustic-blue);
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.4));
+}
+
+.v4-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* --- STATS: FROZEN IN TIME --- */
+.v4-stats-bar {
+    background: rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 4rem 0;
+}
+
+.v4-stat-val {
+    font-family: var(--font-ice);
+    font-size: 5rem;
+    font-weight: 800;
+    color: #FFF;
+    text-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+    line-height: 1;
+}
+
+.v4-stat-label {
+    font-family: var(--font-data);
+    color: var(--caustic-deep);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .v4-hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .v4-ice-block {
+        height: 400px;
+        margin-top: 4rem;
+    }
+
+    .v4-grid {
+        grid-template-columns: 1fr;
+    }
+}

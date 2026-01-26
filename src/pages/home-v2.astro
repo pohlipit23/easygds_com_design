@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import '../styles/laminar.css';
+---
+
+<Layout title="easyGDS | Enterprise Travel Commerce">
+  <link rel="stylesheet" href="/src/styles/corporate-glass.css" />
+  <Navigation theme="light" />
+  
+  <div class="v2-scope v2-wrapper">
+    
+    <!-- HERO SECTION -->
+    <section class="v2-hero">
+      <div class="v2-hero-content">
+        <div class="v2-hero-text">
+          <div class="v2-badge">ECOSYSTEM v2.0 READY</div>
+          <h1>
+            Travel Commerce.<br>
+            <span class="v2-gradient-text">Simplified.</span>
+          </h1>
+          <p>
+            A complete ecosystem for airlines, travel agents, and loyalty brands to build products and manage distribution without cost or complexity.
+          </p>
+          
+          <div class="v2-btn-group">
+            <a href="#solutions" class="v2-btn-primary">Explore Solutions</a>
+          </div>
+        </div>
+        
+        <div class="v2-hero-visual">
+          <div class="v2-hero-card">
+            <div class="v2-screenshot-carousel">
+              <img src="/images/b2c_homepage.png" alt="EasyGDS Homepage" class="v2-carousel-slide active" />
+              <img src="/images/search_results.png" alt="EasyGDS Search Results" class="v2-carousel-slide" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .v2-screenshot-carousel {
+        position: relative;
+        width: 100%;
+      }
+      
+      .v2-carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      
+      .v2-carousel-slide:first-child {
+        position: relative;
+      }
+      
+      .v2-carousel-slide.active {
+        opacity: 1;
+      }
+    </style>
+
+    <script>
+      function initV2Carousel() {
+        const slides = document.querySelectorAll('.v2-carousel-slide');
+        if (slides.length === 0) return;
+        
+        let currentIndex = 0;
+        
+        setInterval(() => {
+          slides[currentIndex].classList.remove('active');
+          currentIndex = (currentIndex + 1) % slides.length;
+          slides[currentIndex].classList.add('active');
+        }, 4000);
+      }
+      
+      document.addEventListener('DOMContentLoaded', initV2Carousel);
+    </script>
+
+    <!-- SEGMENT SELECTOR -->
+    <section class="v2-section" id="solutions">
+      <div class="v2-grid-3">
+        <!-- Airlines -->
+        <div class="v2-card">
+          <div class="v2-icon-box">✈️</div>
+          <h3>Airlines</h3>
+          <p>Power your airline holiday brand and own your direct customer relationship.</p>
+        </div>
+        
+        <!-- Agents -->
+        <div class="v2-card">
+          <div class="v2-icon-box">🌍</div>
+          <h3>Travel Agents</h3>
+          <p>Access vast global inventory with transparent costs. Pay only for what you use.</p>
+        </div>
+        
+        <!-- Loyalty -->
+        <div class="v2-card">
+          <div class="v2-icon-box">🛍️</div>
+          <h3>Loyalty & Retail</h3>
+          <p>Launch your travel vertical without complexity. Maintain 1st party customer ownership.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE ENGINE PREVIEW -->
+    <section class="v2-section">
+      <div class="v2-hero-content" style="align-items: center; min-height: auto;">
+        <div class="v2-hero-text">
+          <h2>The "Engine" Preview</h2>
+          <p style="margin-bottom: 1rem;">Every part of airline commerce in one branded ecosystem: Flights, hotels, tours, ancillaries, and loyalty.</p>
+          <p style="font-weight: 600; color: var(--v2-text-main);">Integrate your existing content or use Tripovo’s global inventory for ultimate choice.</p>
+        </div>
+        <div class="v2-hero-visual">
+             <img src="/engine_architecture_visual.png" alt="EasyGDS Engine Architecture" style="width: 100%; border-radius: 12px; box-shadow: var(--v2-shadow-lg);" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF & SCALE -->
+    <section class="v2-trust" style="margin-top: 4rem;">
+      <div class="v2-section">
+        <!-- Partner Logos -->
+        <div class="v2-logo-grid">
+           <div class="v2-logo-text">ETIHAD AIRWAYS</div>
+           <div class="v2-logo-text">MALAYSIA AIRLINES</div>
+           <div class="v2-logo-text">AMADEUS</div>
+           <div class="v2-logo-text">NATAS</div>
+        </div>
+
+        <!-- Global Scale Data Grid -->
+        <div class="v2-grid-4" style="margin-top: 4rem; text-align: center; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+           <div>
+             <h3 style="font-size: 2.5rem; color: var(--v2-primary); margin-bottom: 0.5rem;">1M+</h3>
+             <p style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em;">HOTELS</p>
+           </div>
+           <div>
+             <h3 style="font-size: 2.5rem; color: var(--v2-primary); margin-bottom: 0.5rem;">950+</h3>
+             <p style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em;">CARRIERS</p>
+           </div>
+           <div>
+             <h3 style="font-size: 2.5rem; color: var(--v2-primary); margin-bottom: 0.5rem;">250K+</h3>
+             <p style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em;">ACTIVITIES</p>
+           </div>
+           <div>
+             <h3 style="font-size: 2.5rem; color: var(--v2-primary); margin-bottom: 0.5rem;">650+</h3>
+             <p style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em;">CAR RENTAL</p>
+           </div>
+        </div>
+      </div>
+    </section>
+    
+  </div>
+</Layout>

@@ -1,0 +1,375 @@
+/* 
+  THEME: MOLTEN OBSIDIAN TECTONICS
+  CONCEPT: Raw geological power. Volcanic glass, magma veins, and heat-based interaction.
+  A dark, aggressive, and powerful aesthetic.
+*/
+
+:root {
+    /* -- MATERIALS -- */
+    --obsidian-dark: #050505;
+    /* Vantablack */
+    --obsidian-shard: #121212;
+    /* The shiny surface of the stone */
+    --obsidian-rough: #0A0A0A;
+    /* The rough exterior */
+
+    /* -- MAGMA ENERGY -- */
+    --magma-core: #FF3300;
+    /* White-hot center */
+    --magma-mid: #FF5E00;
+    /* Floating orange lava */
+    --magma-cool: #800000;
+    /* Cooling crust red */
+    --ash-cloud: rgba(255, 255, 255, 0.1);
+
+    /* -- PHYSICS -- */
+    --shard-edge: 1px solid rgba(255, 255, 255, 0.15);
+    /* Sharp reflective edge */
+    --active-edge: 1px solid var(--magma-mid);
+
+    --glow-heat: 0 0 20px rgba(255, 94, 0, 0.2);
+    --glow-intense: 0 0 40px rgba(255, 51, 0, 0.4);
+
+    /* -- TYPOGRAPHY -- */
+    --font-display: 'Manrope', sans-serif;
+    --font-tech: 'Space Mono', monospace;
+
+    --ease-crackle: cubic-bezier(0.1, 0.9, 0.2, 1);
+    /* Fast snap */
+}
+
+/* --- GLOBAL RESET --- */
+.v3-scope {
+    background-color: var(--obsidian-dark);
+    color: #FFF;
+    font-family: var(--font-display);
+    overflow-x: hidden;
+    /* Tectonic texture background */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100px 100px;
+    background-position: center;
+}
+
+.v3-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.v3-scope h1,
+.v3-scope h2,
+.v3-scope h3 {
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+}
+
+.v3-mono {
+    font-family: var(--font-tech);
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    color: var(--magma-mid);
+    text-transform: uppercase;
+}
+
+/* --- HERO: VOLCANIC ERUPTION --- */
+.v3-hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    /* Vignette spotlight */
+    background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%);
+}
+
+.v3-hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    z-index: 2;
+}
+
+.v3-hero h1 {
+    font-size: clamp(4rem, 8vw, 6rem);
+    /* MASSIVE HEADLINE */
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.v3-title-break {
+    display: block;
+    color: #333;
+    /* Dark cooling rock */
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.v3-magma-text {
+    background: linear-gradient(180deg, #FFF, var(--magma-mid));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px var(--magma-mid));
+}
+
+/* Fissure Line */
+.v3-hero-text::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--magma-core), transparent);
+    box-shadow: 0 0 10px var(--magma-core);
+}
+
+.v3-hero p {
+    color: #888;
+    font-size: 1.1rem;
+    max-width: 500px;
+    line-height: 1.6;
+    border-left: 1px solid #333;
+    padding-left: 2rem;
+}
+
+/* --- OBSIDIAN BUTTON --- */
+.v3-btn-magma {
+    background: var(--obsidian-shard);
+    color: var(--magma-mid);
+    padding: 1.5rem 3rem;
+    border: 1px solid var(--magma-mid);
+    font-family: var(--font-tech);
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 3rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s;
+    box-shadow: 0 0 15px rgba(255, 94, 0, 0.1);
+}
+
+.v3-btn-magma:hover {
+    background: var(--magma-mid);
+    color: #000;
+    box-shadow: 0 0 40px var(--magma-mid);
+}
+
+/* Glitch/Heat distortion effect on hover */
+.v3-btn-magma::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: rotate(45deg) translate(-100%, -100%);
+    transition: 0.5s;
+}
+
+.v3-btn-magma:hover::after {
+    transform: rotate(45deg) translate(100%, 100%);
+}
+
+/* --- HERO VISUAL: SHATTERED GLASS --- */
+.v3-hero-visual {
+    perspective: 1000px;
+}
+
+.v3-shard-card {
+    background: #000;
+    border: 1px solid #333;
+    position: relative;
+    transform: rotateY(-15deg) rotateX(10deg);
+    transition: transform 0.5s var(--ease-crackle);
+    box-shadow: -20px 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+.v3-shard-card:hover {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+    border-color: var(--magma-mid);
+}
+
+.v3-shard-card img {
+    opacity: 0.7;
+    /* Darken the image */
+    width: 100%;
+    display: block;
+    mix-blend-mode: luminosity;
+    /* Turn image B&W */
+    transition: all 0.5s;
+}
+
+.v3-shard-card:hover img {
+    opacity: 1;
+    mix-blend-mode: normal;
+    /* Reveal color on interaction */
+}
+
+/* Cracks in the corners */
+.v3-shard-card::before,
+.v3-shard-card::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--magma-mid);
+    transition: all 0.3s;
+}
+
+.v3-shard-card::before {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.v3-shard-card::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+}
+
+/* --- SECTIONS: TECTONIC PLATES --- */
+.v3-section {
+    padding: 8rem 2rem;
+    position: relative;
+    border-top: 1px solid #111;
+}
+
+/* Heat vents (glowing lines) */
+.v3-vent {
+    position: absolute;
+    left: 10%;
+    height: 100%;
+    width: 1px;
+    background: linear-gradient(to bottom, #111, var(--magma-cool), #111);
+    opacity: 0.5;
+}
+
+.v3-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    /* Tight gap like fitted stones */
+    max-width: 1400px;
+    margin: 4rem auto 0;
+}
+
+.v3-plate {
+    background: var(--obsidian-shard);
+    padding: 3rem;
+    border: 1px solid #222;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.v3-plate:hover {
+    background: #111;
+    border-color: var(--magma-mid);
+    z-index: 10;
+    box-shadow: 0 0 30px rgba(255, 94, 0, 0.1);
+}
+
+.v3-icon-huge {
+    font-size: 4rem;
+    color: #222;
+    /* Hidden intially */
+    margin-bottom: 2rem;
+    transition: 0.3s;
+    text-shadow: 2px 2px 0 var(--magma-cool);
+}
+
+.v3-plate:hover .v3-icon-huge {
+    color: #FFF;
+    text-shadow: 0 0 20px var(--magma-mid);
+}
+
+.v3-plate h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.v3-plate p {
+    color: #666;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+/* --- STATS: MOLTEN NUMBERS --- */
+.v3-stats {
+    background: #000;
+}
+
+.v3-stat-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.v3-stat-item {
+    padding: 4rem 2rem;
+    text-align: center;
+    border-right: 1px solid #222;
+    flex: 1;
+    position: relative;
+}
+
+.v3-stat-val {
+    font-family: var(--font-tech);
+    font-size: 4rem;
+    color: transparent;
+    -webkit-text-stroke: 1px #444;
+    /* Outline text */
+    position: relative;
+}
+
+/* Fill effect on hover */
+.v3-stat-item:hover .v3-stat-val {
+    color: #FFF;
+    text-shadow: 0 0 20px var(--magma-core);
+    -webkit-text-stroke: 0;
+}
+
+/* --- FOOTER: COOLING CRUST --- */
+.v3-footer {
+    background: #080808;
+    color: #444;
+    padding: 6rem 2rem;
+    border-top: 4px solid var(--magma-mid);
+    /* The last glowing line */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .v3-hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .v3-shard-card {
+        transform: none;
+        margin-top: 4rem;
+    }
+
+    .v3-shard-card img {
+        opacity: 1;
+        mix-blend-mode: normal;
+    }
+
+    .v3-stat-item {
+        border-bottom: 1px solid #222;
+        border-right: none;
+        width: 50%;
+    }
+}

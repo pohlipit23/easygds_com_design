@@ -1,0 +1,46 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="bg-brand-primary text-white pt-24 pb-12 relative overflow-hidden">
+    <!-- Giant Watermark -->
+    <div class="absolute top-0 right-0 text-[12rem] md:text-[20rem] font-black text-white/5 leading-none pointer-events-none -translate-y-1/2 translate-x-1/4">
+        GDS
+    </div>
+
+    <div class="container-custom relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-2">
+                <a href="/" class="text-3xl font-black tracking-tight mb-8 block">easyGDS</a>
+                <p class="text-xl text-white/60 max-w-md font-light leading-relaxed">
+                    Building the future of travel commerce, one connection at a time.
+                </p>
+            </div>
+            
+            <div class="space-y-4">
+                <h4 class="text-sm font-bold uppercase tracking-widest text-brand-accent">Platform</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-white/70 hover:text-white hover:underline decoration-brand-accent underline-offset-4 transition-all">For Airlines</a></li>
+                    <li><a href="#" class="text-white/70 hover:text-white hover:underline decoration-brand-accent underline-offset-4 transition-all">For Agents</a></li>
+                    <li><a href="#" class="text-white/70 hover:text-white hover:underline decoration-brand-accent underline-offset-4 transition-all">Loyalty & Retail</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="text-sm font-bold uppercase tracking-widest text-brand-accent">Company</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-white/70 hover:text-white hover:underline decoration-brand-accent underline-offset-4 transition-all">About</a></li>
+                    <li><a href="#" class="text-white/70 hover:text-white hover:underline decoration-brand-accent underline-offset-4 transition-all">Contact</a></li>
+                    <li><a href="#" class="text-white/70 hover:text-white hover:underline decoration-brand-accent underline-offset-4 transition-all">Legal</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 font-mono">
+            <p>&copy; {year} EASYGDS. ALL RIGHTS RESERVED.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white uppercase">Privacy</a>
+                <a href="#" class="hover:text-white uppercase">Terms</a>
+            </div>
+        </div>
+    </div>
+</footer>

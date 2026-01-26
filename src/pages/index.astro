@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/laminar.css';
+---
+
+<Layout title="easyGDS | Laminar Travel Commerce">
+  <div class="laminar-wrapper">
+    <!-- SECTION 1: HERO - 'INJECTION POINT' -->
+    <section class="section hero" id="hero">
+
+      
+      <header class="nav-interface">
+        <a href="/" class="brand-link">
+          <img src="/easygds_logo.png" alt="easyGDS" class="brand-logo" style="height: 40px; width: auto;" />
+        </a>
+        <nav>
+          <a href="#airlines" class="nav-link">AIRLINES</a>
+          <a href="#agents" class="nav-link">TRAVEL AGENTS</a>
+          <a href="#loyalty" class="nav-link">LOYALTY & RETAIL</a>
+          <a href="#features" class="nav-link">TECHNOLOGY</a>
+        </nav>
+        <a href="https://otademo.easygds.com" target="_blank" rel="noopener noreferrer" class="btn-demo">
+          VIEW DEMO
+        </a>
+      </header>
+
+      <div class="hero-content hero-split">
+        <div class="hero-text">
+          <div class="label-badge">
+            <span class="mono">ECOSYSTEM.V1</span>
+          </div>
+          <h1>
+            TRAVEL COMMERCE.<br>
+            <span class="gradient-text">SIMPLIFIED.</span>
+          </h1>
+          <p class="mission-statement">
+            A complete ecosystem for airlines, travel agents, and loyalty brands to build products and manage distribution without cost or complexity.
+          </p>
+          
+          <div class="cta-vector">
+            <a href="#solutions" class="btn-primary">
+              <span class="btn-text">EXPLORE SOLUTIONS</span>
+              <div class="btn-flow"></div>
+            </a>
+          </div>
+        </div>
+
+        <!-- HERO SCREENSHOT CAROUSEL -->
+        <div class="hero-visual">
+          <div class="hero-screenshot-wrapper">
+            <div class="screenshot-carousel">
+              <img src="/images/b2c_homepage.png" alt="EasyGDS Homepage" class="carousel-slide active" />
+              <img src="/images/search_results.png" alt="EasyGDS Search Results" class="carousel-slide" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .screenshot-carousel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      
+      .carousel-slide:first-child {
+        position: relative;
+      }
+      
+      .carousel-slide.active {
+        opacity: 1;
+      }
+    </style>
+
+    <script>
+      function initCarousel() {
+        const slides = document.querySelectorAll('.carousel-slide');
+        if (slides.length === 0) return;
+        
+        let currentIndex = 0;
+        
+        setInterval(() => {
+          slides[currentIndex].classList.remove('active');
+          currentIndex = (currentIndex + 1) % slides.length;
+          slides[currentIndex].classList.add('active');
+        }, 4000);
+      }
+      
+      document.addEventListener('DOMContentLoaded', initCarousel);
+    </script>
+
+    <!-- SECTION 2: SEGMENT SELECTOR -->
+    <section class="section segments">
+      <div class="laminar-wrapper">
+        <h2 style="text-align: center; margin-bottom: 3rem;">POWERING THE ECOSYSTEM</h2>
+        <div class="segment-grid">
+          <!-- Airlines -->
+          <div class="segment-card">
+            <div class="segment-icon">✈️</div>
+            <h3>Airlines</h3>
+            <p>Power your airline holiday brand and own your direct customer relationship.</p>
+            <div class="mono" style="color: var(--aero-accent);">DIRECT_CHANNEL ></div>
+          </div>
+          <!-- Travel Agents -->
+          <div class="segment-card">
+            <div class="segment-icon">🌍</div>
+            <h3>Travel Agents</h3>
+            <p>Access vast global inventory with transparent costs. Pay only for what you use.</p>
+            <div class="mono" style="color: var(--aero-accent);">GLOBAL_ACCESS ></div>
+          </div>
+          <!-- Loyalty & Retail -->
+          <div class="segment-card">
+            <div class="segment-icon">🛍️</div>
+            <h3>Loyalty & Retail</h3>
+            <p>Launch your travel vertical without complexity. Maintain 1st party customer ownership.</p>
+            <div class="mono" style="color: var(--aero-accent);">VERTICAL_LAUNCH ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: THE ENGINE PREVIEW -->
+    <section class="section flow-restore">
+      <div class="laminar-wrapper split-layout">
+        <div class="text-block">
+          <div class="label-badge">
+            <span class="mono">CORE.SYS</span>
+          </div>
+          <h2>THE COMPLETE ENGINE</h2>
+          <p>Every part of airline commerce in one branded ecosystem: Flights, hotels, tours, ancillaries, and loyalty.</p>
+          <p style="margin-top: 1rem; color: var(--text-main); font-weight: 600;">
+            Integrate your existing content or use Tripovo’s global inventory for ultimate choice.
+          </p>
+        </div>
+        <div class="visual-block">
+             <img src="/engine_architecture_visual.png" alt="EasyGDS Engine Architecture" style="max-width: 100%; height: auto; box-shadow: var(--shadow-ambient); border-radius: 12px;">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PROOF & SCALE -->
+    <section class="section stability">
+      
+      <!-- Partner Logos -->
+      <div class="partner-scroller">
+        <div class="partner-track-container">
+          <div class="partner-track">
+            <!-- Text-based logos for now, as requested visuals -->
+            <div class="partner-logo">ETIHAD AIRWAYS</div>
+            <div class="partner-logo">MALAYSIA AIRLINES</div>
+            <div class="partner-logo">AMADEUS</div>
+            <div class="partner-logo">NATAS</div>
+            <!-- Duplicates for scrolling -->
+            <div class="partner-logo">ETIHAD AIRWAYS</div>
+            <div class="partner-logo">MALAYSIA AIRLINES</div>
+            <div class="partner-logo">AMADEUS</div>
+            <div class="partner-logo">NATAS</div>
+             <div class="partner-logo">ETIHAD AIRWAYS</div>
+            <div class="partner-logo">MALAYSIA AIRLINES</div>
+            <div class="partner-logo">AMADEUS</div>
+            <div class="partner-logo">NATAS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-row" style="margin-top: 4rem;">
+        <div class="stat-unit">
+          <div class="stat-value mono">1M+</div>
+          <div class="stat-label">HOTELS</div>
+        </div>
+        <div class="stat-unit">
+          <div class="stat-value mono">950+</div>
+          <div class="stat-label">CARRIERS</div>
+        </div>
+        <div class="stat-unit">
+          <div class="stat-value mono">250K+</div>
+          <div class="stat-label">ACTIVITIES</div>
+        </div>
+        <div class="stat-unit">
+          <div class="stat-value mono">650+</div>
+          <div class="stat-label">CAR RENTAL</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CTA - 'THRUST VECTORING' -->
+    <section class="section thrust">
+      <div class="content-layer">
+        <h2>READY FOR TAKEOFF?</h2>
+        <p>Switch to the only GDS designed for the physics of modern travel.</p>
+        <div class="input-group">
+          <input type="email" placeholder="ENTER_EMAIL_COORDINATES" class="mono-input" />
+          <button class="btn-primary">
+             ENGAGE
+             <div class="btn-flow"></div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: FOOTER - 'GROUND EFFECT' -->
+    <footer class="section ground">
+      <div class="footer-grid">
+        <div class="col brand-col">
+          <h3>easyGDS</h3>
+          <p class="mono copyright">© 2024 SYSTEMS OPTIMIZED</p>
+        </div>
+        <div class="col">
+          <h4>VECTORS</h4>
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="col">
+          <h4>LEGAL</h4>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+        <div class="col">
+          <div class="status-panel mono">
+             EP_: ONLINE<br>
+             NDC_: ACTIVE<br>
+             SERVER: US-EAST
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</Layout>

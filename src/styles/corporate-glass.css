@@ -1,0 +1,373 @@
+/* 
+  THEME: CORPORATE AERO-GLASS
+  CONCEPT: High-trust enterprise cleanliness meets modern spatial depth. 
+  White backgrounds, subtle borders, deep slate text, and refined glass interaction.
+*/
+
+:root {
+    /* -- BASES -- */
+    --v2-void: #FFFFFF;
+    --v2-surface: #FAFAFA;
+    /* Very subtle grey for contrast */
+    --v2-surface-elevation: #FFFFFF;
+
+    /* -- ACCENTS -- */
+    --v2-primary: #0056B3;
+    /* Deep Enterprise Blue - Trustworthy */
+    --v2-primary-light: #3B82F6;
+    /* Modern Blue for accents */
+    --v2-highlight: #F0F9FF;
+    /* Very pale blue background wash */
+
+    /* -- GLASS MATERIALS -- */
+    --v2-glass-border: 1px solid rgba(0, 0, 0, 0.06);
+    --v2-glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 1);
+
+    /* -- DEPTH -- */
+    /* Clean, highly diffuse shadows */
+    --v2-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --v2-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --v2-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+
+    /* -- TYPOGRAPHY -- */
+    --v2-text-main: #0F172A;
+    /* Slate 900 - Sharp, high contrast */
+    --v2-text-muted: #64748B;
+    /* Slate 500 */
+    --v2-font-heading: 'Manrope', sans-serif;
+    --v2-font-mono: 'Space Mono', monospace;
+
+    --v2-ease: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Page Specific Reset */
+.v2-scope {
+    background-color: var(--v2-void);
+    color: var(--v2-text-main);
+    font-family: var(--v2-font-heading);
+    line-height: 1.5;
+}
+
+.v2-wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.v2-scope h1,
+.v2-scope h2,
+.v2-scope h3 {
+    color: var(--v2-text-main);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.v2-scope p {
+    color: var(--v2-text-muted);
+    font-size: 1.125rem;
+    line-height: 1.75;
+}
+
+/* --- HERO SECTION --- */
+.v2-hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding-top: 80px;
+    /* Nav spacing */
+    /* Subtle background mesh */
+    background:
+        radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.03) 0%, transparent 40%);
+}
+
+.v2-hero-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.v2-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: var(--v2-highlight);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--v2-primary);
+    margin-bottom: 2rem;
+    border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.v2-hero h1 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    margin-bottom: 1.5rem;
+}
+
+.v2-gradient-text {
+    background: linear-gradient(135deg, var(--v2-primary), #1E40AF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- BUTTONS --- */
+.v2-btn-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.v2-btn-primary {
+    background: var(--v2-primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    /* Corporate rounded */
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s var(--v2-ease);
+    box-shadow: var(--v2-shadow-md);
+    border: 1px solid transparent;
+}
+
+.v2-btn-primary:hover {
+    background: #1E40AF;
+    transform: translateY(-1px);
+    box-shadow: var(--v2-shadow-lg);
+}
+
+.v2-btn-secondary {
+    background: white;
+    color: var(--v2-text-main);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: var(--v2-glass-border);
+}
+
+.v2-btn-secondary:hover {
+    background: var(--v2-surface);
+}
+
+/* --- HERO VISUAL - GLASS SAAS --- */
+.v2-hero-visual {
+    position: relative;
+    padding: 2rem;
+}
+
+.v2-hero-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    position: relative;
+}
+
+/* Add a subtle "shine" to the top of the card */
+.v2-hero-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 1), transparent);
+}
+
+.v2-hero-card {
+    max-height: 480px;
+    overflow: hidden;
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.2)) drop-shadow(0 15px 30px rgba(0, 86, 179, 0.15));
+}
+
+.v2-hero-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- SEGMENTS - CARDS --- */
+.v2-section {
+    padding: 6rem 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.v2-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.v2-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    transition: all 0.3s var(--v2-ease);
+}
+
+.v2-card:hover {
+    box-shadow: var(--v2-shadow-lg);
+    border-color: var(--v2-primary-light);
+    transform: translateY(-4px);
+}
+
+.v2-icon-box {
+    width: 48px;
+    height: 48px;
+    background: var(--v2-highlight);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--v2-primary);
+}
+
+.v2-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.v2-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--v2-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.v2-link:hover {
+    text-decoration: underline;
+}
+
+/* --- TRUST BAR --- */
+.v2-trust {
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 3rem 0;
+    background: #FAFAFA;
+}
+
+.v2-logo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    opacity: 0.6;
+    filter: grayscale(100%);
+}
+
+.v2-logo-text {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--v2-text-muted);
+}
+
+/* --- CTA SECTION --- */
+.v2-cta {
+    background: var(--v2-primary);
+    color: white;
+    border-radius: 24px;
+    padding: 6rem 2rem;
+    text-align: center;
+    margin: 4rem 2rem;
+}
+
+.v2-cta h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.v2-cta p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+.v2-input-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem;
+    border-radius: 12px;
+    display: inline-flex;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.v2-input {
+    background: transparent;
+    border: none;
+    padding: 1rem 2rem;
+    color: white;
+    outline: none;
+    min-width: 300px;
+}
+
+.v2-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.v2-input-btn {
+    background: white;
+    color: var(--v2-primary);
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.v2-input-btn:hover {
+    background: #F8FAFC;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .v2-hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .v2-hero-visual {
+        margin-top: 3rem;
+    }
+
+    .v2-btn-group {
+        justify-content: center;
+    }
+
+    .v2-input-wrapper {
+        flex-direction: column;
+        background: transparent;
+        border: none;
+    }
+
+    .v2-input {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+    }
+
+    .v2-input-btn {
+        width: 100%;
+    }
+}

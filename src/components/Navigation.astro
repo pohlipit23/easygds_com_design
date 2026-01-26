@@ -1,0 +1,52 @@
+---
+interface Props {
+  theme?: 'light' | 'dark';
+}
+
+const { theme = 'light' } = Astro.props;
+
+const isDark = theme === 'dark';
+
+// Theme classes
+const navClass = isDark 
+  ? "bg-black/80 backdrop-blur-md border border-white/10 shadow-lg shadow-orange-900/20" 
+  : "bg-white/90 backdrop-blur-md border border-white/20 shadow-lg shadow-gray-200/20";
+
+const textPrimary = isDark ? "text-white" : "text-gray-900";
+const textSecondary = isDark ? "text-gray-400" : "text-gray-600";
+const textHover = isDark ? "text-orange-500" : "text-blue-600";
+const pillHover = isDark ? "hover:bg-white/5" : "hover:bg-white hover:shadow-sm";
+const loginText = isDark ? "text-orange-500 hover:text-orange-400" : "text-blue-900 hover:text-blue-700";
+const btnBg = isDark ? "bg-orange-600 hover:bg-orange-500" : "bg-blue-600 hover:bg-blue-700";
+const logoFilter = isDark ? "brightness-0 invert" : "";
+---
+<nav class="fixed top-6 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-[1400px] mx-auto px-6">
+    <div class={`rounded-2xl px-6 h-16 flex items-center justify-between ${navClass}`}>
+        
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+            <img src="/easygds_logo.png" alt="easyGDS" class={`h-8 w-auto object-contain transition-all duration-300 ${logoFilter}`} />
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class={`hidden lg:flex items-center gap-1 p-1.5 rounded-xl border ml-8 ${isDark ? 'bg-white/5 border-white/5' : 'bg-gray-100/50 border-gray-200/50'}`}>
+            <a href="/airlines" class={`nav-pill ${textSecondary} ${pillHover} ${textHover}`}>Airlines</a>
+            <a href="/agents" class={`nav-pill ${textSecondary} ${pillHover} ${textHover}`}>Agents</a>
+            <a href="/loyalty" class={`nav-pill ${textSecondary} ${pillHover} ${textHover}`}>Loyalty</a>
+            <a href="/technology" class={`nav-pill ${textSecondary} ${pillHover} ${textHover}`}>Technology</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="flex items-center gap-4">
+            <a href="https://otademo.easygds.com" target="_blank" rel="noopener noreferrer" class={`hidden md:flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold transition-all border ${isDark ? 'border-orange-500/50 text-orange-400 hover:bg-orange-500/10' : 'border-blue-500/50 text-blue-600 hover:bg-blue-500/10'}`}>
+                View Demo
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+            </a>
+        </div>
+
+    </div>
+  </div>
+</nav>
