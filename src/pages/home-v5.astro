@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout title="easyGDS | Travel Commerce Simplified">
+  <!-- Import Pop Theme & Layout -->
+  <link rel="stylesheet" href="/src/styles/pop-theme.css" />
+  <link rel="stylesheet" href="/src/styles/pop-layout.css" />
+  
+  <!-- Use a clean light navigation to match the pop theme -->
+  <Navigation theme="light" />
+  
+  <div class="pop-scope pop-wrapper">
+    <!-- Fluid background blobs for liveliness -->
+    <div class="pop-bg-blob pop-bg-blob-1"></div>
+    <div class="pop-bg-blob pop-bg-blob-2"></div>
+    
+    <!-- HERO SECTION -->
+    <section class="pop-section pop-hero">
+      <div class="pop-container">
+        <div class="pop-hero-grid">
+          
+          <!-- Text Content -->
+          <div class="pop-hero-content animate-float">
+            <span class="pop-overline">ECOSYSTEM_DEPTH: 01</span>
+            <h1 class="pop-heading-xl">
+              Travel Commerce.<br>
+              <span class="pop-text-gradient">Simplified.</span>
+            </h1>
+            <p class="pop-lead">
+              A complete ecosystem for airlines, travel agents, and loyalty brands to build products and manage distribution without cost or complexity.
+            </p>
+            
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="#solutions" class="pop-btn pop-btn-primary">
+                Explore Solutions
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="/demo" class="pop-btn pop-btn-secondary">
+                View Demo
+              </a>
+            </div>
+          </div>
+          
+          <!-- Visual Content: Floating Card with Carousel -->
+          <div class="pop-hero-visual">
+            <div class="pop-visual-card">
+              <!-- Carousel Implementation -->
+              <div class="pop-carousel">
+                <img src="/images/b2c_homepage.png" class="pop-carousel-slide active" alt="B2C Homepage Interface" />
+                <img src="/images/search_results.png" class="pop-carousel-slide" alt="Search Results Interface" />
+              </div>
+            </div>
+            
+            <!-- Floating Decorative Elements -->
+            <div style="position: absolute; top: -20px; right: -20px; background: white; padding: 1rem; border-radius: 12px; box-shadow: var(--pop-shadow-lg); animation: pop-float 5s ease-in-out infinite reverse;">
+              <span style="font-weight: 700; color: var(--pop-primary); font-size: 1.25rem;">+24%</span>
+              <span style="display: block; font-size: 0.75rem; color: var(--pop-text-muted);">Conversion</span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS GRID -->
+    <section class="pop-section" id="solutions">
+      <div class="pop-container">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 class="pop-heading-lg">Powering the <span class="pop-text-gradient">Travel Ecosystem</span></h2>
+            <p class="pop-lead" style="margin: 0 auto;">Everything you need to scale your travel business, all in one place.</p>
+        </div>
+        
+        <div class="pop-features-grid">
+          <!-- Airlines -->
+          <div class="pop-card">
+            <div class="pop-icon-box">✈️</div>
+            <h3 class="pop-heading-md">Airlines</h3>
+            <p style="color: var(--pop-text-muted);">Power your airline holiday brand and own your direct customer relationship with our white-label solutions.</p>
+          </div>
+          
+          <!-- Travel Agents -->
+          <div class="pop-card">
+            <div class="pop-icon-box">🌍</div>
+            <h3 class="pop-heading-md">Travel Agents</h3>
+            <p style="color: var(--pop-text-muted);">Access vast global inventory with transparent costs. Pay only for what you use, no hidden fees.</p>
+          </div>
+          
+          <!-- Loyalty & Retail -->
+          <div class="pop-card">
+            <div class="pop-icon-box">🛍️</div>
+            <h3 class="pop-heading-md">Loyalty & Retail</h3>
+            <p style="color: var(--pop-text-muted);">Launch your travel vertical without complexity. Maintain 1st party customer ownership seamlessly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGINE PREVIEW SECTION -->
+    <section class="pop-section" style="background: linear-gradient(to bottom, transparent, rgba(241, 245, 249, 0.5));">
+      <div class="pop-container">
+        <div class="pop-hero-grid">
+           <!-- Illustration/Image -->
+           <div class="pop-hero-visual" style="perspective: none;">
+             <img src="/engine_architecture_visual.png" alt="Engine Architecture" style="width: 100%; border-radius: var(--pop-radius-md); box-shadow: var(--pop-shadow-float);" />
+           </div>
+           
+           <!-- Content -->
+           <div>
+             <span class="pop-overline">THE CORE ENGINE</span>
+             <h2 class="pop-heading-lg">End-to-End <br><span class="pop-text-gradient">Capabilities</span></h2>
+             <p class="pop-lead">
+               Every part of airline commerce in one branded ecosystem: Flights, hotels, tours, ancillaries, and loyalty.
+             </p>
+             <p style="font-weight: 600; color: var(--pop-text-main); margin-bottom: 2rem;">
+               Integrate your existing content or use Tripovo’s global inventory for ultimate choice.
+             </p>
+             
+             <ul style="list-style: none; padding: 0; display: grid; gap: 1rem;">
+                <li style="display: flex; align-items: center; gap: 0.75rem; font-weight: 500;">
+                    <span style="color: var(--pop-secondary);">✓</span> Real-time Inventory Management
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.75rem; font-weight: 500;">
+                    <span style="color: var(--pop-secondary);">✓</span> Dynamic Packaging Engine
+                </li>
+                 <li style="display: flex; align-items: center; gap: 0.75rem; font-weight: 500;">
+                    <span style="color: var(--pop-secondary);">✓</span> Multi-currency Payment Gateway
+                </li>
+             </ul>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF & SCALE -->
+    <div class="pop-stats-container">
+       <div class="pop-logos">
+         <div class="pop-logo-item">ETIHAD AIRWAYS</div>
+         <div class="pop-logo-item">MALAYSIA AIRLINES</div>
+         <div class="pop-logo-item">AMADEUS</div>
+         <div class="pop-logo-item">NATAS</div>
+       </div>
+       
+       <div class="pop-stats-grid">
+         <div>
+           <div class="pop-stat-number">1M+</div>
+           <div class="pop-stat-label">Hotels</div>
+         </div>
+         <div>
+           <div class="pop-stat-number">950+</div>
+           <div class="pop-stat-label">Carriers</div>
+         </div>
+         <div>
+           <div class="pop-stat-number">250K+</div>
+           <div class="pop-stat-label">Activities</div>
+         </div>
+         <div>
+           <div class="pop-stat-number">650+</div>
+           <div class="pop-stat-label">Car Rentals</div>
+         </div>
+       </div>
+    </div>
+    
+  </div>
+  
+  <style>
+    /* Carousel Specifics */
+    .pop-carousel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: var(--pop-radius-sm);
+    }
+    
+    .pop-carousel-slide {
+        display: block;
+        width: 100%;
+        height: auto;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 0.8s ease-in-out;
+    }
+    
+    .pop-carousel-slide:first-child {
+        position: relative; 
+    }
+    
+    .pop-carousel-slide.active {
+        opacity: 1;
+        z-index: 2;
+    }
+  </style>
+
+  <script>
+    function initPopCarousel() {
+      const slides = document.querySelectorAll('.pop-carousel-slide');
+      if (slides.length === 0) return;
+      
+      let currentIndex = 0;
+      
+      setInterval(() => {
+        slides[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.add('active');
+      }, 4000);
+    }
+    
+    document.addEventListener('DOMContentLoaded', initPopCarousel);
+  </script>
+</Layout>
